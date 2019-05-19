@@ -13,13 +13,7 @@ const square = x =>  {
 }
 
 const removeTNames = names => {
-    let newNames = [];
-    names.forEach(name => {
-        if(!name.toLowerCase().includes('t')) {
-            newNames.push(name);
-        }
-    });
-    return newNames;
+    return names.filter(name => !name.toLowerCase().includes('t'));
 };
 
 const myVar = "I'm a variable";

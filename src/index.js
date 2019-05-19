@@ -1,8 +1,9 @@
 import { myVar, hello, square, removeTNames } from './App.js';
+import { createDiv } from './Dom.js';
 
-console.log(myVar);
-console.log(hello());
-console.log(square(-4));
+createDiv(myVar);
+createDiv(hello());
+createDiv(square(-4));
 
 let names = ['Scott', 'Tamara', 'Anita', 'Floren', 'Ray', 'scott'];
-console.log(removeTNames(names));
+createDiv(removeTNames(names));
