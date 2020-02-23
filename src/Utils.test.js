@@ -1,4 +1,4 @@
-import { isNumber, add, square, removeTNames } from "./Utils"
+import { isNumber, add, square, removeTNames, filterByProfile } from "./Utils"
 
 describe('Utils', () => {
     describe('isNumber function', () => {
@@ -46,9 +46,11 @@ describe('Utils', () => {
             expect(square(2)).toBe(4);
             expect(square(3)).toBe(9);
         });
-        it('should return a number', () => {
-            expect(square(2)).toBe(4);
+        it('should return null for a string', () => {
             expect(square("3")).toBe(null);
+        });
+        it('should return null for a empty parameter', () => {
+            expect(square()).toBe(null);
         });
         it('should be positive', () => {
             expect(square(-2)).not.toBeLessThan(0);
@@ -70,4 +72,31 @@ describe('Utils', () => {
             expect(removeTNames(names)).not.toContain('thomas');
         });
     });
+
+    describe('filterByProfile', () => {
+        const profiles = [
+            {name: 'Ted', profile: 'translator', },
+            {name: 'Max', profile: 'admin', },
+            {name: 'Henry', profile: 'admin', },
+            {name: 'Haaland', profile: 'editor', },
+        ]
+        it('should be a function', () => {
+            expect(typeof filterByProfile).toBe('function');
+        });
+        it('should return an array', () => {
+            expect(typeof filterByProfile()).toBe('object'); // arrays are object type
+        });
+        it('should return an array if not parameters', () => {
+            expect(typeof filterByProfile()).toBe('object'); // arrays are object type
+        });
+        it('should return admin profiles', () => {
+            expect(filterByProfile(profiles, 'admin').length).toBe(2);
+        });
+        it('should return editor profiles', () => {
+            expect(filterByProfile(profiles, 'editor').length).toBe(1);
+        });
+        it('should all list if no profile defined', () => {
+            expect(filterByProfile(profiles).length).toBe(4);
+        });
+    } );
 })

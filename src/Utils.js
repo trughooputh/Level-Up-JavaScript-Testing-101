@@ -18,4 +18,16 @@ const removeTNames = names => {
     return names.filter(name => !name.toLowerCase().includes('t'));
 };
 
-export { isNumber, add, square, removeTNames };
+const filterByProfile = (list, profile) => {
+    if (list) {
+        if (profile) {
+            return list.filter(elmt => {
+                return elmt.profile === profile;
+            });
+        }
+        return list;
+    }
+    return [];
+}
+
+export { isNumber, add, square, filterByProfile, removeTNames };
