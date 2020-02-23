@@ -1,4 +1,5 @@
 const createDiv = (content, parent = 'content') => {
+    // console.log('createDiv');
     let div = document.createElement("div");
     let id = Math.random().toString(36).substr(2, 5);
     div.classList.add(`elmt-${id}`);
@@ -7,7 +8,7 @@ const createDiv = (content, parent = 'content') => {
     document.getElementById(parent).appendChild(div);
 }
 
-const createP = (content) => {
+const createP = content => {
     let p = document.createElement("p");
     p.innerHTML = content;
     return p;
