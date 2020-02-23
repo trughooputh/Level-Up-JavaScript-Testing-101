@@ -1,4 +1,4 @@
-import { add, removeTNames } from './App.js';
+import { add, removeTNames } from './Utils.js';
 import { createDiv } from './Dom.js';
 
 let names = ['Scott', 'Tamara', 'Anita', 'Floren', 'Ray', 'scott'];

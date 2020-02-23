@@ -1,9 +1,5 @@
 # Level Up Tutorials JavaScript Testing 101
 
-## Help Support
-
-https://www.leveluptutorials.com/store
-
 ## How To Use
 
 ```
