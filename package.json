@@ -18,6 +18,7 @@
   },
   "jest": {
     "verbose": true,
-    "testURL": "http://localhost:1234/"
+    "testURL": "http://localhost:1234/",
+    "coverageReporters": "html"
   }
 }
