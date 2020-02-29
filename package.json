@@ -19,6 +19,7 @@
   "jest": {
     "verbose": true,
     "testURL": "http://localhost:1234/",
-    "coverageReporters": "html"
+    "coverageReporters": ["html"],
+    "testEnvironment": "jsdom"
   }
 }

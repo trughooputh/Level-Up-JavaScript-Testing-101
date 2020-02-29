@@ -1,4 +1,4 @@
-import { isNumber, add, square, removeTNames, filterByProfile } from "./Utils"
+import { isNumber, add, square, removeTNames, filterByProfile, removeVowels } from "./Utils"
 
 describe('Utils', () => {
     describe('isNumber function', () => {
@@ -83,7 +83,7 @@ describe('Utils', () => {
         it('should be a function', () => {
             expect(typeof filterByProfile).toBe('function');
         });
-        it('should return an array', () => {
+        it('should return an array empty, if no params', () => {
             expect(typeof filterByProfile()).toBe('object'); // arrays are object type
         });
         it('should return an array if not parameters', () => {
@@ -95,8 +95,23 @@ describe('Utils', () => {
         it('should return editor profiles', () => {
             expect(filterByProfile(profiles, 'editor').length).toBe(1);
         });
-        it('should all list if no profile defined', () => {
+        it('should return all list if no profile defined', () => {
             expect(filterByProfile(profiles).length).toBe(4);
+        });
+    } );
+
+    describe('removeVowels', () => {
+        it('should be a function', () => {
+            expect(typeof removeVowels).toBe('function');
+        });
+        it('should return an empty string, if no params', () => {
+            expect(typeof removeVowels()).toBe('string');
+        });
+        it('should return a text without vowels', () => {
+            expect(removeVowels('hello world')).toBe('hll wrld');
+            expect(removeVowels('my text')).toBe('m txt');
+            expect(removeVowels('hola la vida')).toBe('hl l vd');
+            expect(removeVowels('my text')).toBe('m txt');
         });
     } );
 })
